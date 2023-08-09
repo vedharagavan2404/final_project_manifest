@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: web-app-configmap
+data:
+  DBHOST: "10.244.0.5"
+  DBPORT: "3306"
+  DBPWD: "vedha.123"
+  

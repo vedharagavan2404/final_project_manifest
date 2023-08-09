@@ -10,10 +10,7 @@ spec:
       image: 690612321301.dkr.ecr.us-east-1.amazonaws.com/web-application-image-repo:v2.0
       ports:
         - containerPort: 8080
-      env:
-        - name: DBHOST
-          value: "10.244.0.5"
-        - name: DBPORT
-          value: "3306"
-        - name: DBPWD
-          value: "vedha.123"
+      envFrom:
+        - configMapRef:
+            name: web-app-configmap
+  restartPolicy: Never
