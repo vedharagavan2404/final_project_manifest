@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mysql-db-pod
+  labels:
+    app.kubernetes.io/name: mysqldb
+    app.kubernetes.io/component: backend
+spec:
+  containers:
+    - name: mysql-db
+      image: 690612321301.dkr.ecr.us-east-1.amazonaws.com/mysqldb-image-repo:v1.0
+      ports:
+        - containerPort: 3306
+      env:
+        - name: MYSQL_ROOT_PASSWORD
+          value: vedha.123
