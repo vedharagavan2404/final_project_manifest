@@ -1,0 +1,51 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-container
+  namespace: webapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: employees
+      version: v1
+  template:
+    metadata:
+      labels:
+        app: employees
+        version: v1
+    spec:
+      containers:
+        - name: app-container
+          image: 708519571347.dkr.ecr.us-east-1.amazonaws.com/ecr1:v5
+          ports:
+            - containerPort: 81
+          env:
+            - name: DBHOST
+              value: mysql-service.sqldb
+            - name: DBPORT
+              value: "3306"
+            - name: DBUSER
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-credentials
+                  key: DBUSER
+            - name: DBPWD
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-credentials
+                  key: DBPWD
+            - name: DATABASE
+              value: employees
+            - name: APP_COLOR
+              value: blue
+            - name: YOUR_NAME
+              valueFrom:
+                configMapKeyRef:
+                  name: app-config
+                  key: YOUR_NAME  # Use the correct key here
+            - name: BACKGROUND_IMAGE_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: app-config
+                  key: BACKGROUND_IMAGE_URL
