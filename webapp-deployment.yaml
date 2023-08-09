@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
       - name: web-app-pod
-        image: 690612321301.dkr.ecr.us-east-1.amazonaws.com/web-application-image-repo:v1.0
+        image: 690612321301.dkr.ecr.us-east-1.amazonaws.com/web-application-image-repo:v2.0
         resources:
           requests:
             cpu: 100m

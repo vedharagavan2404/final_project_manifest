@@ -7,7 +7,7 @@ metadata:
 spec:
   containers:
     - name: my-web-app
-      image: 690612321301.dkr.ecr.us-east-1.amazonaws.com/web-application-image-repo:v1.0
+      image: 690612321301.dkr.ecr.us-east-1.amazonaws.com/web-application-image-repo:v2.0
       ports:
         - containerPort: 8080
       env:

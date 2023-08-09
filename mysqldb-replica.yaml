@@ -15,7 +15,7 @@ spec:
           app: mysql
     spec:
       containers:
-      - image: 690612321301.dkr.ecr.us-east-1.amazonaws.com/mysqldb-image-repo:v1.0
+      - image: 690612321301.dkr.ecr.us-east-1.amazonaws.com/mysqldb-image-repo:v2.0
         name: mysqldb-pod
         ports:
         - containerPort: 3306
