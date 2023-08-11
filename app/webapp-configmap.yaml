@@ -5,4 +5,4 @@ metadata:
   namespace: final
 data:
   BACKGROUND_IMAGE_URL: https://final-group11-bucket-jal.s3.amazonaws.com/demo_image.jpg
-  YOUR_NAME: SENECA_TEAM2
+  YOUR_NAME: SENECA_GROUP11

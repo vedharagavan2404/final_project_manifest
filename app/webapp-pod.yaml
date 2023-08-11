@@ -8,10 +8,21 @@ metadata:
 spec:
   containers:
     - name: my-web-app
-      image: 209830628404.dkr.ecr.us-east-1.amazonaws.com/finalexam-app:1.0
+      image: 209830628404.dkr.ecr.us-east-1.amazonaws.com/clo835_final_project_app:v1.0
       ports:
         - containerPort: 8080
+      env:
+        - name: DBHOST
+          value: mysql-service.sqldb.svc.cluster.local
+        - name: DBPORT
+          value: "3306"
+        - name: DBUSER
+          value: "root"
+        - name: DBPWD
+          value: "pw"
       envFrom:
         - configMapRef:
             name: webapp-configmap
+  imagePullSecrets:
+    - name: regcred
   restartPolicy: Never
