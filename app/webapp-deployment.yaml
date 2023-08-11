@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: app-container
-  namespace: webapp
+  namespace: final
 spec:
   replicas: 1
   selector:
@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: app-container
-          image: 708519571347.dkr.ecr.us-east-1.amazonaws.com/ecr1:v5
+          image: 209830628404.dkr.ecr.us-east-1.amazonaws.com/finalexam-app:1.0
           ports:
             - containerPort: 81
           env:
