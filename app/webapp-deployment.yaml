@@ -25,10 +25,10 @@ spec:
         - name: app-container
           image: 209830628404.dkr.ecr.us-east-1.amazonaws.com/clo835_final_project_app:v1.0
           ports:
-            - containerPort: 81
+            - containerPort: 8080
           env:
             - name: DBHOST
-              value: mysql-service.sqldb.svc.cluster.local
+              value: "mysql-service.final.svc.cluster.local"
             - name: DBPORT
               value: "3306"
             - name: DBUSER
@@ -48,12 +48,12 @@ spec:
             - name: YOUR_NAME
               valueFrom:
                 configMapKeyRef:
-                  name: app-config
+                  name: webapp-configmap
                   key: YOUR_NAME  # Use the correct key here
             - name: BACKGROUND_IMAGE_URL
               valueFrom:
                 configMapKeyRef:
-                  name: app-config
+                  name: webapp-configmap
                   key: BACKGROUND_IMAGE_URL
       imagePullSecrets:
         - name: regcred
