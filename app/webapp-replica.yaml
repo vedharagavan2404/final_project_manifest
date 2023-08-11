@@ -6,27 +6,34 @@ metadata:
   labels:
     app: employees
     version: v1
+    app.kubernetes.io/name: webapp
 spec:
   replicas: 3
   selector:
     matchLabels:
         app: employees
         version: v1
+        app.kubernetes.io/name: webapp
   template:
     metadata:
       labels:
           app: employees
           version: v1
+          app.kubernetes.io/name: webapp
     spec:
       containers:
-      - image: 209830628404.dkr.ecr.us-east-1.amazonaws.com/finalexam-app:1.0
+      - image: 209830628404.dkr.ecr.us-east-1.amazonaws.com/clo835_final_project_app:v1.0
         name: webapp-pod
         ports:
         - containerPort: 8080
         env:
         - name: DBHOST
-          value: "10.244.0.13"
+          value: mysql-service.sqldb.svc.cluster.local
         - name: DBPORT
           value: "3306"
+        - name: DBUSER
+          value: root
         - name: DBPWD
-          value: "vedha.123"
+          value: "pw"
+      imagePullSecrets:
+        - name: regcred
