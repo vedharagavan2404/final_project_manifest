@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: ReplicaSet
 metadata:
   name: webapp-replica
+  namespace: final
   labels:
     app: employees
     version: v1
@@ -18,7 +19,7 @@ spec:
           version: v1
     spec:
       containers:
-      - image: 690612321301.dkr.ecr.us-east-1.amazonaws.com/web-application-image-repo:v2.0
+      - image: 209830628404.dkr.ecr.us-east-1.amazonaws.com/finalexam-app:1.0
         name: webapp-pod
         ports:
         - containerPort: 8080

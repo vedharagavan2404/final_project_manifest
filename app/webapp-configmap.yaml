@@ -2,7 +2,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: app-config
-  namespace: webapp
+  namespace: final
 data:
-  BACKGROUND_IMAGE_URL: https://assignmentsree.s3.amazonaws.com/download.jpg
+  BACKGROUND_IMAGE_URL: https://final-group11-bucket-jal.s3.amazonaws.com/demo_image.jpg
   YOUR_NAME: SENECA_TEAM2
