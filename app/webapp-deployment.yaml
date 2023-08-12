@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
         - name: app-container
-          image: 209830628404.dkr.ecr.us-east-1.amazonaws.com/clo835_final_project_app:v1.0
+          image: 690612321301.dkr.ecr.us-east-1.amazonaws.com/clo835_final_project_app:v1.0
           ports:
             - containerPort: 8080
           env:
