@@ -10,7 +10,7 @@ spec:
     - name: my-web-app
       image: 209830628404.dkr.ecr.us-east-1.amazonaws.com/clo835_final_project_app:v1.0
       ports:
-        - containerPort: 8080
+        - containerPort: 81
       env:
         - name: DBHOST
           value: mysql-service.final.svc.cluster.local
