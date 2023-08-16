@@ -9,8 +9,6 @@ spec:
       protocol: TCP
       port: 81
       targetPort: 81
-      nodePort: 30000
   selector:
-    app: employees
-    version: v1
-  type: NodePort
+    app.kubernetes.io/name: webapp
+  type: LoadBalancer
